@@ -15,15 +15,8 @@ nexbank-api-gateway/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       ├── deploy-dev.yml
-│       ├── deploy-staging.yml
-│       └── deploy-prod.yml
+│       └── cd.yml
 ├── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
-│   └── ingress.yaml
 ├── package.json / pom.xml
 └── README.md
 
@@ -33,15 +26,8 @@ nexbank-user-service/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       ├── deploy-dev.yml
-│       ├── deploy-staging.yml
-│       └── deploy-prod.yml
+│       └── cd.yml
 ├── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
-│   └── configmap.yaml
 ├── package.json / pom.xml
 └── README.md
 
@@ -51,15 +37,8 @@ nexbank-account-service/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       ├── deploy-dev.yml
-│       ├── deploy-staging.yml
-│       └── deploy-prod.yml
+│       └── cd.yml
 ├── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
-│   └── configmap.yaml
 ├── package.json / pom.xml
 └── README.md
 
@@ -69,15 +48,8 @@ nexbank-transaction-service/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       ├── deploy-dev.yml
-│       ├── deploy-staging.yml
-│       └── deploy-prod.yml
+│       └── cd.yml
 ├── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
-│   └── configmap.yaml
 ├── package.json / pom.xml
 └── README.md
 
@@ -87,15 +59,8 @@ nexbank-notification-service/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       ├── deploy-dev.yml
-│       ├── deploy-staging.yml
-│       └── deploy-prod.yml
+│       └── cd.yml
 ├── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   ├── hpa.yaml
-│   └── configmap.yaml
 ├── package.json / pom.xml
 └── README.md
 
@@ -105,14 +70,8 @@ nexbank-web-app/
 ├── .github/
 │   └── workflows/
 │       ├── ci.yml
-│       ├── deploy-dev.yml
-│       ├── deploy-staging.yml
-│       └── deploy-prod.yml
+│       └── cd.yml
 ├── Dockerfile
-├── k8s/
-│   ├── deployment.yaml
-│   ├── service.yaml
-│   └── ingress.yaml
 ├── package.json
 └── README.md
 
@@ -220,25 +179,112 @@ nexbank-gitops/
 │   │   └── secrets/
 │   ├── dev/
 │   │   ├── api-gateway/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── ingress.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── user-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── account-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── transaction-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── notification-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   └── web-app/
+│   │       ├── deployment.yaml
+│   │       ├── service.yaml
+│   │       ├── ingress.yaml
+│   │       └── kustomization.yaml
 │   ├── staging/
 │   │   ├── api-gateway/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── ingress.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── user-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── account-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── transaction-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   ├── notification-service/
+│   │   │   ├── deployment.yaml
+│   │   │   ├── service.yaml
+│   │   │   ├── hpa.yaml
+│   │   │   ├── configmap.yaml
+│   │   │   └── kustomization.yaml
 │   │   └── web-app/
+│   │       ├── deployment.yaml
+│   │       ├── service.yaml
+│   │       ├── ingress.yaml
+│   │       └── kustomization.yaml
 │   └── production/
 │       ├── api-gateway/
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   ├── hpa.yaml
+│       │   ├── ingress.yaml
+│       │   └── kustomization.yaml
 │       ├── user-service/
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   ├── hpa.yaml
+│       │   ├── configmap.yaml
+│       │   └── kustomization.yaml
 │       ├── account-service/
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   ├── hpa.yaml
+│       │   ├── configmap.yaml
+│       │   └── kustomization.yaml
 │       ├── transaction-service/
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   ├── hpa.yaml
+│       │   ├── configmap.yaml
+│       │   └── kustomization.yaml
 │       ├── notification-service/
+│       │   ├── deployment.yaml
+│       │   ├── service.yaml
+│       │   ├── hpa.yaml
+│       │   ├── configmap.yaml
+│       │   └── kustomization.yaml
 │       └── web-app/
+│           ├── deployment.yaml
+│           ├── service.yaml
+│           ├── ingress.yaml
+│           └── kustomization.yaml
 ├── monitoring/
 │   ├── prometheus/
 │   │   ├── prometheus-config.yaml
@@ -532,15 +578,13 @@ Related to NBK-567
   - Docker image build (multi-stage builds)
   - Image vulnerability scanning
   - Push to Amazon ECR
-  - Update Kubernetes manifests in GitOps repo
-  - Trigger ArgoCD sync
+  - Update image tags in GitOps repository (nexbank-gitops)
+  - ArgoCD auto-sync detects changes and deploys
 
 #### GitHub Actions Workflows (per repository)
 Each microservice repository contains:
-- **ci.yml**: Build, test, and scan code
-- **deploy-dev.yml**: Deploy to development environment
-- **deploy-staging.yml**: Deploy to staging environment
-- **deploy-prod.yml**: Deploy to production environment
+- **ci.yml**: Build, test, scan code, and push Docker image to ECR
+- **cd.yml**: Update image tags in GitOps repository manifests to trigger ArgoCD deployment
 
 ### Observability Stack
 
@@ -629,12 +673,13 @@ Application Logs → Fluentd/Fluent Bit → Elasticsearch → Kibana
 ## 🔄 GitOps Workflow with ArgoCD
 
 ### Workflow
-1. Developer pushes code to Git
-2. CI pipeline runs tests and builds Docker image
-3. CI pipeline updates Kubernetes manifests in GitOps repo
-4. ArgoCD detects changes and syncs with cluster
-5. Prometheus and Grafana monitor deployment
-6. Alerts trigger on anomalies
+1. Developer pushes code to microservice Git repository
+2. CI pipeline runs tests, builds Docker image, and pushes to ECR
+3. CD pipeline updates image tags in GitOps repository (nexbank-gitops)
+4. ArgoCD detects manifest changes and syncs with Kubernetes cluster
+5. Kubernetes pulls new images from ECR and performs rolling update
+6. Prometheus and Grafana monitor deployment health
+7. Alerts trigger on anomalies or deployment failures
 
 ### ArgoCD Features Used
 - **App of Apps Pattern**: Manage multiple applications
